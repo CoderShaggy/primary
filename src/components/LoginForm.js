@@ -11,16 +11,15 @@ const LoginForm =() => {
         url:"",
     } 
   
-    const [error,setError] = useState("");  
     const [details, setDeatails] = useState (adminUser);
 
 
-    const submitHandler = e => {
+    const submitHandler = (e) => {
         e.preventDefault();
         console.log(details);
     }
 
-    const buttonClicked = () => {
+    const buttonClicked = (e) => {
         console.log('', details)
     }
 
@@ -28,8 +27,7 @@ const LoginForm =() => {
         <>
             <form onSubmit={submitHandler }>
                 <div className="form-inner">
-                    <h2>Login</h2>
-                    {(error !=="") ? ( <div className="error">{error}</div>):""}
+                    <h2>Login Form</h2>
                     <div className="form-group">
                         <label htmlFor="firstname">First Name:</label>
                         <input type="text" name="name" id="name" onChange={e => setDeatails({...details, name: e.target.value})} value={details.name} />
@@ -59,35 +57,35 @@ const LoginForm =() => {
     )
 }
 
-const Data = [
-    {
-      firstname: 'Haseem',
-      lastname: 'Team Lead',
-      state: 'United State of Pakistan',
-      city :'Rawalpindi',
-      url:'' ,
-    },
-     {
-      firstname: 'Hassam',
-      lastname: 'Div',
-      state: 'United State of Pakistan',
-      city : 'Top City',
-      url :'',
-    },
-     {
-      firstname: 'Mujtaba',
-      lastname: 'Learner',
-      state: 'United State of Pakistan',
-      city :'Islamabad',
-      url:'',
-    },
-      {
-        firstname: 'Ahsan',
-        lastname: 'Team Lead',
-        state: 'United State of Pakistan',
-        city :'Lahore',
-        url:'',
-    },
-  ]
+// const Data = [
+//     {
+//       firstname: 'Haseem',
+//       lastname: 'Team Lead',
+//       state: 'United State of Pakistan',
+//       city :'Rawalpindi',
+//       url:'' ,
+//     },
+//      {
+//       firstname: 'Hassam',
+//       lastname: 'Div',
+//       state: 'United State of Pakistan',
+//       city : 'Top City',
+//       url :'',
+//     },
+//      {
+//       firstname: 'Mujtaba',
+//       lastname: 'Learner',
+//       state: 'United State of Pakistan',
+//       city :'Islamabad',
+//       url:'',
+//     },
+//       {
+//         firstname: 'Ahsan',
+//         lastname: 'Team Lead',
+//         state: 'United State of Pakistan',
+//         city :'Lahore',
+//         url:'',
+//     },
+//   ]
   
   export default LoginForm;
